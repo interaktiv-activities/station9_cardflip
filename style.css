@@ -1,0 +1,244 @@
+@font-face{
+    font-family: Eathoma;
+    src: url(Assets/Fonts/EathomaSansFont.ttf);
+}
+
+@font-face{
+    font-family: Sofia;
+    src: url(Assets/Fonts/Sofia/Sofia\ Pro\ Medium\ Az.otf)
+}
+
+@font-face{
+    font-family: CandyBeans;
+    src: url(Assets/Fonts/Candy\ Beans.otf)
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("Assets/Images/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.instruct-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    height: auto;
+    padding-top: 50px;
+}
+
+.menu-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 17%;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 150px;
+    transition: width 100ms ease-in-out, height 100ms ease-in-out;
+}
+
+.menu-image:hover {
+    width: 19%;
+    height: auto;
+}
+
+.game-info-container {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-info {
+    color: white;
+    font-family: Sofia;
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 40px;
+    margin: 50px;
+    justify-content: center;
+    perspective: 500px;
+}
+
+.dice{
+    margin-top: 10px;
+    height: 55px;
+    position: absolute;
+    z-index: 2;
+}
+
+.card {
+    position: relative;
+    height: 175px;
+    width: 125px; 
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    transition: transform 500ms ease-in-out;
+}
+
+.card.visible .card-back {
+    transform: rotateY(-180deg);
+}
+
+.card.visible .card-front {
+    transform: rotateY(0);
+}
+
+.card.matched .card-value {
+    animation: pulse 2s linear infinite 500ms;
+}
+
+@keyframes pulse {
+    0% {
+		transform: scale(0.95);
+	}
+
+	70% {
+		transform: scale(1);
+	}
+
+	100% {
+		transform: scale(0.95);
+	}
+}
+
+.overlay-text {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    color: white;
+    font-family: Eathoma;
+    font-weight: bolder;
+}
+
+.overlay-text-small {
+    font-size: .3em;
+    font-family: Sofia;
+    font-weight: 500;
+}
+
+.overlay-text.visible {
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 500ms forwards;
+}
+
+@keyframes overlay-grow {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+        font-size: 0;
+
+    }
+    to {
+      background-color: rgba(0, 0, 0, .8);
+      font-size: 4em;  
+    }
+}
+
+.button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
+    height: auto;
+    padding-top: 50px;
+    transition: width 100ms ease-in-out, height 100ms ease-in-out;
+}
+
+.button:hover {
+    width: 57%;
+    height: auto;
+}
+
+.card-back {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.card-front {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+.card-value {
+    position: absolute;
+    width: 110px;
+    height: 160px;
+    transition: width 100ms ease-in-out, height 100ms ease-in-out;
+}
+
+.card-front:hover .card-value {
+    width: 105px;
+    height: 155px;
+}
+
+.chalk {
+    position: absolute;
+    width: 110px;
+    height: 160px;
+    transition: width 100ms ease-in-out, height 100ms ease-in-out;
+}
+
+.card-back:hover .chalk {
+    width: 105px;
+    height: 155px;
+}
+
+.card-back:hover .dice{
+    top: 50px;
+    transition: top 100ms ease-in-out,
+}
+
+.title{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title-img{
+    height: 50px;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .game-container {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .game-info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
