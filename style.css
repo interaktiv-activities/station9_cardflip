@@ -164,19 +164,34 @@ body {
 }
 
 .button {
+    background-color: #FF7701;
+    border: transparent;
+    font-family: Eathoma;
+    color: #FFFFFF;
+    border-radius: 15px;
+    font-size: 15px;
+    padding-left: 60px;
+    padding-right: 60px;
+    box-shadow: 0px 12px #D86400;
+    position: relative;
+    margin: auto;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 55%;
-    height: auto;
-    padding-top: 50px;
     transition: width 100ms ease-in-out, height 100ms ease-in-out;
 }
 
 .button:hover {
-    width: 57%;
-    height: auto;
+    box-shadow: 0px 8px #D86400;
+    top: 4px;
 }
+
+.button:active {
+    box-shadow: 0px 2px #D86400;
+    top: 10px;
+}
+
 
 .card-back {
     background-color: #ffffff;
