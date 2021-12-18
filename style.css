@@ -73,7 +73,7 @@ body {
 
 .dice{
     margin-top: 10px;
-    height: 55px;
+    height: 65px;
     position: absolute;
     z-index: 2;
 }
@@ -86,13 +86,13 @@ body {
 
 .card-face {
     position: absolute;
-    width: 100%;
+    width: 95%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     backface-visibility: hidden;
-    border-radius: 10px;
+    border-radius: 20px;
     border-width: 1px;
     border-style: solid;
     transition: transform 500ms ease-in-out;
@@ -206,30 +206,30 @@ body {
 
 .card-value {
     position: absolute;
-    width: 110px;
+    width: 100px;
     height: 160px;
     transition: width 100ms ease-in-out, height 100ms ease-in-out;
 }
 
 .card-front:hover .card-value {
-    width: 105px;
-    height: 155px;
+    width: 100px;
+    height: 160px;
 }
 
 .chalk {
     position: absolute;
-    width: 110px;
+    width: 100px;
     height: 160px;
     transition: width 100ms ease-in-out, height 100ms ease-in-out;
 }
 
 .card-back:hover .chalk {
-    width: 105px;
-    height: 155px;
+    width: 100px;
+    height: 160px;
 }
 
 .card-back:hover .dice{
-    top: 50px;
+    height: 75px;
     transition: top 100ms ease-in-out,
 }
 
